@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      intervals: {},
+      sprints: [{ name: 'Work' }],
     }
   },
   methods: {
