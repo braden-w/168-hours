@@ -2,6 +2,16 @@
   <v-container>
     <v-card>
       <v-card-title>Settings</v-card-title>
+      <draggable
+        v-model="sprints"
+        group="people"
+        @start="drag = true"
+        @end="drag = false"
+      >
+        <div v-for="sprint in sprints" :key="sprint.id">
+          {{ sprint.name }}
+        </div>
+      </draggable>
       <draggable v-model="sprints" draggable=".item">
         <v-container fluid>
           <v-card v-for="sprint in sprints" :key="sprint" class="item">
