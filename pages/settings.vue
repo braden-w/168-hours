@@ -19,6 +19,12 @@ export default {
       intervals: {},
     }
   },
+  methods: {
+    addSprint() {},
+  },
+  methods: {
+    addSprint() {},
+  },
 }
 </script>
 
