@@ -14,15 +14,17 @@
           :key="index"
           class="item"
         >
-          <v-card>
+          <v-card
+            class="align-center justify-center rounded-pill"
+            color="secondary"
+          >
             <v-row>
-              <v-col cols="9"
-                ><v-text-field label="Name" v-bind="sprint.name"> </v-text-field
-              ></v-col>
-              <v-col cols="3"> {{ sprint.duration }}</v-col></v-row
-            >
-            <v-spacer> </v-spacer
-          ></v-card>
+              <v-col cols="9">
+                <v-text-field label="Name" v-bind="sprint.name"> </v-text-field>
+              </v-col>
+              <v-col cols="3"> {{ sprint.duration }}</v-col>
+            </v-row>
+          </v-card>
         </v-container>
         <!-- <v-container fluid>
           <v-card v-for="sprint in sprints" :key="sprint" class="item">
