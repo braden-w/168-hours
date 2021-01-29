@@ -60,6 +60,7 @@ export default {
       // Toggles top bar goes over side bar
       clipped: false,
       drawer: false,
+      // Toggles bar fixed
       fixed: false,
       items: [
         {
