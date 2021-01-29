@@ -19,7 +19,10 @@
               <v-col cols="9">
                 <v-text-field label="Name" v-bind="sprint.name"> </v-text-field>
               </v-col>
-              <v-col cols="3"> {{ sprint.duration }}</v-col>
+              <v-col cols="3">
+                <v-text-field label="Duration" v-bind="sprint.duration">
+                </v-text-field
+              ></v-col>
             </v-row>
           </v-card>
         </v-container>
