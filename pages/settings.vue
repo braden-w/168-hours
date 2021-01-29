@@ -10,6 +10,8 @@
         @end="dragging = false"
       >
           {{ sprint.name }}
+          <v-spacer> </v-spacer>
+          {{ sprint.duration }}
         </div>
         <!-- <v-container fluid>
           <v-card v-for="sprint in sprints" :key="sprint" class="item">
