@@ -59,6 +59,12 @@ export default {
         },
 
         {
+          icon: 'mdi-clock',
+          title: 'Timer',
+          to: '/timer',
+        },
+
+        {
           icon: 'mdi-cog',
           title: 'Settings',
           to: '/settings',
