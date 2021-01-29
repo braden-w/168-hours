@@ -6,6 +6,7 @@
         <v-card v-for="sprint in sprints" :key="sprint">
           {{ sprint.name }}
         </v-card>
+        <v-btn slot="header" @click="addSprint">Add Sprint</v-btn>
       </draggable>
     </v-card>
   </v-container>
