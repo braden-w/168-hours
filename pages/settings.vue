@@ -2,6 +2,11 @@
   <v-container>
     <v-card>
       <v-card-title>Settings</v-card-title>
+      <v-card-actions>
+        <v-btn slot="header" color="primary" @click="addSprint('Hi', 10)">
+          Add Sprint
+        </v-btn>
+      </v-card-actions>
       <draggable
         :list="sprints"
         class="list-group"
@@ -17,7 +22,11 @@
           <v-card color="secondary" class="pa-3">
             <v-row>
               <v-col cols="9">
-                <v-text-field v-model="sprint.name" label="Name">
+                <v-text-field
+                  v-model="sprint.name"
+                  label="Name"
+                  prepend-icon="mdi-cog"
+                >
                 </v-text-field>
               </v-col>
               <v-col cols="3">
@@ -31,9 +40,6 @@
             </v-row>
           </v-card>
         </v-container>
-        <v-btn slot="footer" color="primary" @click="addSprint('Hi', 10)">
-          Add Sprint
-        </v-btn>
       </draggable>
     </v-card>
   </v-container>
