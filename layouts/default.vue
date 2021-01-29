@@ -55,22 +55,22 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Welcome',
-          to: '/'
+          to: '/',
         },
 
         {
           icon: 'mdi-cog',
           title: 'Settings',
-          to: '/settings'
+          to: '/settings',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-account',
           title: 'Login',
-          to: '/login'
-        }
+          to: '/login',
+        },
       ],
-      title: 'Home'
+      title: 'Home',
     }
-  }
+  },
 }
 </script>
