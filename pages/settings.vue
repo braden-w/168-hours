@@ -16,7 +16,11 @@
 export default {
   data() {
     return {
-      sprints: [{ name: 'Work' }],
+      sprints: [
+        { name: 'Work', duration: '10' },
+        { name: 'Work', duration: '10' },
+        { name: 'Work', duration: '10' },
+      ],
     }
   },
   methods: {
