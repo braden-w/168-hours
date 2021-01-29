@@ -36,7 +36,7 @@
             {{ sprint.name }}
           </v-card>
         </v-container> -->
-        <v-btn slot="footer" color="primary" @click="addSprint">
+        <v-btn slot="footer" color="primary" @click="addSprint('Hi', 10)">
           Add Sprint
         </v-btn>
       </draggable>
@@ -60,7 +60,9 @@ export default {
     }
   },
   methods: {
-    addSprint() {},
+    addSprint(name, duration) {
+      this.sprints.push({ name, duration })
+    },
   },
 }
 </script>
