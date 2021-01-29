@@ -64,6 +64,7 @@
 export default {
   data() {
     return {
+      // Toggles top bar goes over side bar
       clipped: false,
       drawer: false,
       fixed: false,
