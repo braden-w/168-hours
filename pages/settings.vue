@@ -2,12 +2,7 @@
   <v-container>
     <v-card>
       <v-card-title>Settings</v-card-title>
-      <draggable
-        v-model="sprints"
-        group="people"
-        @start="drag = true"
-        @end="drag = false"
-      >
+      <draggable v-model="sprints" draggable=".item">
         <div v-for="(sprint, index) in sprints" :key="index">
           {{ sprint.name }}
         </div>
