@@ -32,8 +32,8 @@ export default {
     return {
       sprints: [
         { name: 'Work', duration: '10' },
-        { name: 'Work', duration: '10' },
-        { name: 'Work', duration: '10' },
+        { name: 'Work2', duration: '10' },
+        { name: 'Work3', duration: '10' },
       ],
     }
   },
