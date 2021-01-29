@@ -16,8 +16,8 @@
         >
           <v-card>
             <v-row>
-              <v-col cols="2">{{ sprint.name }}</v-col>
-              <v-col cols="10"> {{ sprint.duration }}</v-col></v-row
+              <v-col cols="9">{{ sprint.name }}</v-col>
+              <v-col cols="3"> {{ sprint.duration }}</v-col></v-row
             >
             <v-spacer> </v-spacer
           ></v-card>
