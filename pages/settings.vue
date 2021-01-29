@@ -12,40 +12,42 @@
           Add Sprint
         </v-btn>
       </v-card-actions>
-      <draggable
-        :list="sprints"
-        class="list-group"
-        draggable=".item"
-        @start="dragging = true"
-        @end="dragging = false"
-      >
-        <v-container
-          v-for="(sprint, index) in sprints"
-          :key="index"
-          class="item"
+      <v-card-text>
+        <draggable
+          :list="sprints"
+          class="list-group"
+          draggable=".item"
+          @start="dragging = true"
+          @end="dragging = false"
         >
-          <v-card color="secondary" class="pa-3">
-            <v-row>
-              <v-col cols="9">
-                <v-text-field
-                  v-model="sprint.name"
-                  label="Name"
-                  prepend-icon="mdi-cog"
-                >
-                </v-text-field>
-              </v-col>
-              <v-col cols="3">
-                <v-text-field
-                  v-model="sprint.duration"
-                  type="number"
-                  label="Duration"
-                >
-                </v-text-field
-              ></v-col>
-            </v-row>
-          </v-card>
-        </v-container>
-      </draggable>
+          <v-container
+            v-for="(sprint, index) in sprints"
+            :key="index"
+            class="item"
+          >
+            <v-card color="secondary" class="pa-3">
+              <v-row>
+                <v-col cols="9">
+                  <v-text-field
+                    v-model="sprint.name"
+                    label="Name"
+                    prepend-icon="mdi-cog"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col cols="3">
+                  <v-text-field
+                    v-model="sprint.duration"
+                    type="number"
+                    label="Duration"
+                  >
+                  </v-text-field
+                ></v-col>
+              </v-row>
+            </v-card>
+          </v-container>
+        </draggable>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
