@@ -9,11 +9,17 @@
         @start="dragging = true"
         @end="dragging = false"
       >
-        <v-card v-for="(sprint, index) in sprints" :key="index" class="item">
-          {{ sprint.name }}
-          <v-spacer> </v-spacer>
-          {{ sprint.duration }}
-        </v-card>
+        <v-container
+          v-for="(sprint, index) in sprints"
+          :key="index"
+          class="item"
+        >
+          <v-card
+            >{{ sprint.name }}
+            <v-spacer> </v-spacer>
+            {{ sprint.duration }}</v-card
+          >
+        </v-container>
         <!-- <v-container fluid>
           <v-card v-for="sprint in sprints" :key="sprint" class="item">
             {{ sprint.name }}
