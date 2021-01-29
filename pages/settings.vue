@@ -17,13 +17,14 @@
           <v-card color="secondary" class="pa-3">
             <v-row>
               <v-col cols="9">
-                <v-text-field label="Name" v-bind="sprint.name"> </v-text-field>
+                <v-text-field v-model="sprint.name" label="Name">
+                </v-text-field>
               </v-col>
               <v-col cols="3">
                 <v-text-field
+                  v-model="sprint.duration"
                   type="number"
                   label="Duration"
-                  v-bind="sprint.duration"
                 >
                 </v-text-field
               ></v-col>
