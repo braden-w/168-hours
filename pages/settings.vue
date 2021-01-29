@@ -8,7 +8,7 @@
         @start="drag = true"
         @end="drag = false"
       >
-        <div v-for="sprint in sprints" :key="sprint.id">
+        <div v-for="(sprint, index) in sprints" :key="index">
           {{ sprint.name }}
         </div>
       </draggable>
