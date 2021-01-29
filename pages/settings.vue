@@ -60,7 +60,7 @@ export default {
         { name: 'Work2', duration: '10' },
         { name: 'Work3', duration: '10' },
       ],
-      currentSession: { start, end },
+      currentSession: { start: 0, end: 0 },
       sessions: [],
     }
   },
