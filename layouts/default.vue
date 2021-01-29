@@ -79,6 +79,7 @@ export default {
           to: '/inspire'
         }
       ],
+      // Makes menu minified/no text
       miniVariant: false,
       right: true,
       rightDrawer: false,
