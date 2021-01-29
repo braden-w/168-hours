@@ -14,11 +14,13 @@
           :key="index"
           class="item"
         >
-          <v-card
-            >{{ sprint.name }}
-            <v-spacer> </v-spacer>
-            {{ sprint.duration }}</v-card
-          >
+          <v-card>
+            <v-row>
+              <v-col cols="2">{{ sprint.name }}</v-col>
+              <v-col cols="10"> {{ sprint.duration }}</v-col></v-row
+            >
+            <v-spacer> </v-spacer
+          ></v-card>
         </v-container>
         <!-- <v-container fluid>
           <v-card v-for="sprint in sprints" :key="sprint" class="item">
