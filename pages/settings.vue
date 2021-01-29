@@ -19,7 +19,9 @@
             {{ sprint.name }}
           </v-card>
         </v-container> -->
-        <v-btn slot="header" @click="addSprint">Add Sprint</v-btn>
+        <v-btn slot="footer" color="primary" @click="addSprint">
+          Add Sprint
+        </v-btn>
       </draggable>
     </v-card>
   </v-container>
