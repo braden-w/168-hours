@@ -2,8 +2,13 @@
   <v-container>
     <v-card>
       <v-card-title>Settings</v-card-title>
-      <draggable v-model="sprints" draggable=".item">
-        <div v-for="(sprint, index) in sprints" :key="index">
+      <draggable
+        :list="sprints"
+        class="list-group"
+        draggable=".item"
+        @start="dragging = true"
+        @end="dragging = false"
+      >
           {{ sprint.name }}
         </div>
         <!-- <v-container fluid>
