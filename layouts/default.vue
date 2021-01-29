@@ -72,7 +72,7 @@ export default {
         },
 
         {
-          icon: 'mdi-settings',
+          icon: 'mdi-cog',
           title: 'Settings',
           to: '/settings'
         },
