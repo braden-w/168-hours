@@ -70,6 +70,12 @@ export default {
           title: 'Welcome',
           to: '/'
         },
+
+        {
+          icon: 'mdi-settings',
+          title: 'Settings',
+          to: '/settings'
+        },
         {
           icon: 'mdi-chart-bubble',
           title: 'Login',
