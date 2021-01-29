@@ -59,9 +59,11 @@ export default {
     return {
       // Toggles top bar goes over side bar
       clipped: false,
-      drawer: false,
       // Toggles bar fixed
       fixed: false,
+      // Toggles menu minified/no text
+      miniVariant: false,
+      drawer: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -74,8 +76,6 @@ export default {
           to: '/inspire'
         }
       ],
-      // Toggles menu minified/no text
-      miniVariant: false,
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
