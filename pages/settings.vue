@@ -3,9 +3,11 @@
     <v-card>
       <v-card-title>Settings</v-card-title>
       <draggable v-model="sprints" draggable=".item">
-        <v-card v-for="sprint in sprints" :key="sprint">
-          {{ sprint.name }}
-        </v-card>
+        <v-container fluid>
+          <v-card v-for="sprint in sprints" :key="sprint" class="item">
+            {{ sprint.name }}
+          </v-card>
+        </v-container>
         <v-btn slot="header" @click="addSprint">Add Sprint</v-btn>
       </draggable>
     </v-card>
