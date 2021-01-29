@@ -68,6 +68,9 @@ export default {
     addSprint(name, duration) {
       this.sprints.push({ name, duration })
     },
+    startTimer() {
+      this.currentSession.start = new Date().getTime()
+    },
   },
 }
 </script>
