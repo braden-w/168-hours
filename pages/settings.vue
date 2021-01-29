@@ -71,6 +71,9 @@ export default {
     startTimer() {
       this.currentSession.start = new Date().getTime()
     },
+    endTimer() {
+      this.currentSession.end = new Date().getTime()
+    },
   },
 }
 </script>
