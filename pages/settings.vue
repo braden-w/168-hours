@@ -14,10 +14,7 @@
           :key="index"
           class="item"
         >
-          <v-card
-            class="align-center justify-center rounded-pill"
-            color="secondary"
-          >
+          <v-card color="secondary" class="pa-3">
             <v-row>
               <v-col cols="9">
                 <v-text-field label="Name" v-bind="sprint.name"> </v-text-field>
