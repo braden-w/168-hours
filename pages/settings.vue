@@ -31,11 +31,6 @@
             </v-row>
           </v-card>
         </v-container>
-        <!-- <v-container fluid>
-          <v-card v-for="sprint in sprints" :key="sprint" class="item">
-            {{ sprint.name }}
-          </v-card>
-        </v-container> -->
         <v-btn slot="footer" color="primary" @click="addSprint('Hi', 10)">
           Add Sprint
         </v-btn>
