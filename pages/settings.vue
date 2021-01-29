@@ -3,9 +3,7 @@
     <v-card>
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
-        <v-btn slot="header" color="primary" @click="addSprint('Hi', 10)">
-          Add Sprint
-        </v-btn>
+        <v-btn color="primary" @click="addSprint('Hi', 10)"> Add Sprint </v-btn>
       </v-card-actions>
       <v-divider></v-divider>
       <v-card-text>
