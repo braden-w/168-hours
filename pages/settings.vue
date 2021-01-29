@@ -6,13 +6,11 @@
         <div v-for="(sprint, index) in sprints" :key="index">
           {{ sprint.name }}
         </div>
-      </draggable>
-      <draggable v-model="sprints" draggable=".item">
-        <v-container fluid>
+        <!-- <v-container fluid>
           <v-card v-for="sprint in sprints" :key="sprint" class="item">
             {{ sprint.name }}
           </v-card>
-        </v-container>
+        </v-container> -->
         <v-btn slot="header" @click="addSprint">Add Sprint</v-btn>
       </draggable>
     </v-card>
