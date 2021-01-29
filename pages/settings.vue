@@ -7,6 +7,7 @@
           Add Sprint
         </v-btn>
       </v-card-actions>
+      <v-divider></v-divider>
       <v-card-text>
         <draggable
           :list="sprints"
