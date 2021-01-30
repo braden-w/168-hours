@@ -57,8 +57,8 @@ export default {
   data() {
     return {
       sprints: [
-        { name: 'Work', duration: '52' },
-        { name: 'Break', duration: '23' },
+        { name: 'Work', duration: '52', progress: 0 },
+        { name: 'Break', duration: '23', progress: 0 },
       ],
       currentSession: { start: 0, end: 0 },
       sessions: [],
