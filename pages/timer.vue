@@ -27,6 +27,7 @@
                     v-model="sprint.name"
                     label="Name"
                     prepend-icon="mdi-drag"
+                    @click:prepend="startTimer(index)"
                   >
                   </v-text-field>
                 </v-col>
@@ -67,7 +68,7 @@ export default {
     addSprint(name, duration) {
       this.sprints.push({ name, duration })
     },
-    startTimer() {
+    startTimer(index) {
       this.currentSession.start = new Date().getTime()
     },
     endTimer() {
