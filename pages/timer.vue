@@ -28,7 +28,9 @@
                     label="Name"
                     prepend-icon="mdi-drag"
                     @click:prepend="
-                      !isRunning ? startTimer(index) : endTimer(index)
+                      !currentSession.isRunning
+                        ? endTimer(index)
+                        : startTimer(index)
                     "
                   >
                   </v-text-field>
@@ -94,7 +96,7 @@ export default {
         if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
           indexOfCurrentTimer += 1
         }
-        console.log(prettyMilliseconds(currentSession.progress))
+        console.log(prettyMilliseconds(currentTimer.progress))
       }, this.settings.timer.interval)
     },
     endTimer(indexOfCurrentTimer) {
