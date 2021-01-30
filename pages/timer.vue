@@ -65,7 +65,6 @@
 import { mapMutations } from 'vuex'
 
 import draggable from 'vuedraggable'
-const prettyMilliseconds = require('pretty-ms')
 export default {
   components: {
     draggable,
@@ -77,6 +76,10 @@ export default {
     clearTimers() {
       this.sprints.forEach((sprint) => (sprint.progress = 0))
     },
+    ...mapMutations([
+      'endTimer',
+      'startTimer', // also supports payload `this.nameOfMutation(amount)`
+    ]),
   },
 }
 </script>
