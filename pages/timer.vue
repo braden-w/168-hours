@@ -51,6 +51,7 @@
 
 <script>
 import draggable from 'vuedraggable'
+const dateFormat = require('dateformat')
 export default {
   components: {
     draggable,
