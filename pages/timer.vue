@@ -69,10 +69,15 @@ export default {
         // { name: 'Work', duration: 52, startTime: 0, progress: 0, end: 0 },
         // { name: 'Break', duration: 23, startTime: 0, progress: 0, end: 0 },
 
-        { name: 'Work', duration: 0.05, startTime: 0, progress: 0, end: 0 },
-        { name: 'Break', duration: 0.05, startTime: 0, progress: 0, end: 0 },
+        { name: 'Work', duration: 0.05, progress: 0 },
+        { name: 'Break', duration: 0.05, progress: 0 },
       ],
       settings: { height: 6, rounded: true, timer: { interval: 1000 } },
+      currentSession: {
+        isRunning: false,
+        startTime: 0,
+        endTime: 0,
+      },
       sessions: [],
     }
   },
