@@ -78,7 +78,7 @@ export default {
     startTimer(indexOfCurrentSession) {
       const currentSession = this.sprints[indexOfCurrentSession]
       currentSession.Time = new Date().getTime()
-      const timer = setInterval(() => {
+      this.timer = setInterval(() => {
         const now = new Date().getTime()
 
         currentSession.progress = now - currentSession.Time
@@ -87,6 +87,7 @@ export default {
     },
     endTimer() {
       this.currentSession.end = new Date().getTime()
+      clearInterval(this.timer)
     },
   },
 }
