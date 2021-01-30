@@ -26,7 +26,7 @@
                   <v-text-field
                     v-model="sprint.name"
                     label="Name"
-                    prepend-icon="mdi-cog"
+                    prepend-icon="mdi-drag"
                   >
                   </v-text-field>
                 </v-col>
