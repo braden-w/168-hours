@@ -40,6 +40,7 @@
                   </v-text-field
                 ></v-col>
               </v-row>
+              {{ sprints[index].progress }}
             </v-card>
           </v-container>
         </draggable>
