@@ -92,8 +92,9 @@ export default {
         console.log(prettyMilliseconds(currentSession.progress))
       }, 1000)
     },
-    endTimer() {
-      this.currentSession.end = new Date().getTime()
+    endTimer(indexOfCurrentSession) {
+      const currentSession = this.sprints[indexOfCurrentSession]
+      currentSession.end = new Date().getTime()
       clearInterval(this.timer)
     },
   },
