@@ -69,7 +69,14 @@ export default {
     draggable,
   },
   data() {},
-  methods: {},
+  methods: {
+    prettyMilliseconds(time) {
+      return prettyMilliseconds(time)
+    },
+    clearTimers() {
+      this.sprints.forEach((sprint) => (sprint.progress = 0))
+    },
+  },
 }
 </script>
 
