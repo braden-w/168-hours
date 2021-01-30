@@ -75,8 +75,7 @@ export default {
       const timer = setInterval(() => {
         const now = new Date().getTime()
         currentSession.progress = prettyMilliseconds(
-          now - currentSession.start,
-          'dddd, mmmm dS, yyyy, h:MM:ss TT'
+          now - currentSession.start
         )
       }, 1000)
     },
