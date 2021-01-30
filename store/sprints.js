@@ -13,30 +13,30 @@ export const state = () => ({
 
 export const mutations = {
   addSprint(state, name, duration) {
-    this.sprints.push({ name, duration })
+    state.sprints.push({ name, duration })
   },
   startTimer(state, indexOfCurrentTimer) {
-    this.currentSession.startTime = new Date().getTime()
-    this.currentSession.isRunning = true
-    this.timer = setInterval(() => {
-      const currentTimer = this.sprints[indexOfCurrentTimer]
-      currentTimer.progress += this.settings.timer.interval
+    state.currentSession.startTime = new Date().getTime()
+    state.currentSession.isRunning = true
+    state.timer = setInterval(() => {
+      const currentTimer = state.sprints[indexOfCurrentTimer]
+      currentTimer.progress += state.settings.timer.interval
       if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
         indexOfCurrentTimer += 1
-        if (indexOfCurrentTimer === this.sprints.length) {
-          this.endTimer()
-          if (this.settings.timer.autoRestart) {
-            this.clearTimers()
-            this.startTimer(0)
+        if (indexOfCurrentTimer === state.sprints.length) {
+          state.endTimer()
+          if (state.settings.timer.autoRestart) {
+            state.clearTimers()
+            state.startTimer(0)
           }
         }
       }
       console.log(prettyMilliseconds(currentTimer.progress))
-    }, this.settings.timer.interval)
+    }, state.settings.timer.interval)
   },
   endTimer(state, indexOfCurrentTimer) {
-    this.currentSession.isRunning = false
-    this.currentSession.endTime = new Date().getTime()
-    clearInterval(this.timer)
+    state.currentSession.isRunning = false
+    state.currentSession.endTime = new Date().getTime()
+    clearInterval(state.timer)
   },
 }
