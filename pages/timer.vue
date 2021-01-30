@@ -43,6 +43,7 @@
               <v-progress-linear
                 :height="settings.height"
                 :rounded="settings.rounded"
+                :value="sprint.progress / 1000 / 60 / sprint.duration"
               ></v-progress-linear>
             </v-card>
           </v-container>
