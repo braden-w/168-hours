@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       sprints: [
-        { name: 'Work', duration: 1, startTime: 0, progress: 0, end: 0 },
+        { name: 'Work', duration: 52, startTime: 0, progress: 0, end: 0 },
         { name: 'Break', duration: 23, startTime: 0, progress: 0, end: 0 },
       ],
       settings: { height: 6, rounded: true },
