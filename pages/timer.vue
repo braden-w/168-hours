@@ -77,13 +77,14 @@ export default {
     },
     startTimer(indexOfCurrentSession) {
       const currentSession = this.sprints[indexOfCurrentSession]
-      currentSession.Time = new Date().getTime()
+      currentSession.startTime = new Date().getTime()
       this.timer = setInterval(() => {
         const now = new Date().getTime()
 
-        currentSession.progress = now - currentSession.Time
-        if (currentSession.progress >= currentSession.duration) {
+        currentSession.progress = now - currentSession.startTime
+        if (currentSession.progress >= currentSession.duration * 60 * 1000) {
           clearInterval(this.timer)
+          startTimer(indexOfCurrentSession + 1)
         }
         console.log(prettyMilliseconds(currentSession.progress))
       }, 1000)
