@@ -51,7 +51,7 @@
 
 <script>
 import draggable from 'vuedraggable'
-const prettyMilliseconds = require('prettyMilliseconds')
+const prettyMilliseconds = require('pretty-ms')
 export default {
   components: {
     draggable,
