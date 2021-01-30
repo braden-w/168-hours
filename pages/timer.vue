@@ -73,9 +73,6 @@ export default {
     prettyMilliseconds(time) {
       return prettyMilliseconds(time)
     },
-    clearTimers() {
-      this.sprints.forEach((sprint) => (sprint.progress = 0))
-    },
     ...mapMutations([
       'endTimer',
       'startTimer', // also supports payload `this.nameOfMutation(amount)`
