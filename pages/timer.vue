@@ -99,7 +99,7 @@ export default {
     },
     endTimer(indexOfCurrentTimer) {
       const currentSession = this.sprints[indexOfCurrentTimer]
-      this.surrentSession.isRunning = true
+      this.surrentSession.isRunning = false
       currentSession.end = new Date().getTime()
       clearInterval(this.timer)
     },
