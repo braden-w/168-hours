@@ -5,13 +5,15 @@ export const state = () => ({
   ],
   currentSession: {
     isRunning: false,
+  sessions: [],
     startTime: 0,
     endTime: 0,
   },
-  sessions: [],
-  height: 20,
-  rounded: true,
-  timer: { interval: 1000, autoRestart: true },
+  settings: {
+    height: 20,
+    rounded: true,
+    timer: { interval: 1000, autoRestart: true },
+  },
 })
 export const mutations = {
   addSprint(state, name, duration) {
