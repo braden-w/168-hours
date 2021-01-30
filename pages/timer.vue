@@ -27,7 +27,9 @@
                     v-model="sprint.name"
                     label="Name"
                     prepend-icon="mdi-drag"
-                    @click:prepend="startTimer(index)"
+                    @click:prepend="
+                      !isRunning ? startTimer(index) : endTimer(index)
+                    "
                   >
                   </v-text-field>
                 </v-col>
@@ -82,9 +84,7 @@ export default {
       const currentSession = this.sprints[indexOfCurrentSession]
       currentSession.startTime = new Date().getTime()
       this.timer = setInterval(() => {
-        const now = new Date().getTime()
-
-        currentSession.progress = now - currentSession.startTime
+        currentSession.progress += 1000
         if (currentSession.progress >= currentSession.duration * 60 * 1000) {
           clearInterval(this.timer)
           this.startTimer(indexOfCurrentSession + 1)
