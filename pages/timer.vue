@@ -71,6 +71,7 @@ export default {
       this.sprints[indexOfCurrentSession].start = new Date().getTime()
       const timer = setInterval(() => {
         const now = new Date().getTime()
+        console.log(now)
       }, 1000)
     },
     endTimer() {
