@@ -43,10 +43,11 @@
               <v-progress-linear
                 :height="settings.height"
                 :rounded="settings.rounded"
-                :value="sprint.progress / 1000 / 60 / sprint.duration"
+                :value="sprint.progress / 10 / 60 / sprint.duration"
               ></v-progress-linear>
               {{ sprint.progress / 1000 / 60 / sprint.duration }}
-              {{ sprint.progress / 1000 }}
+              {{ sprint.progress / 10 }}
+              {{ sprint.duration }}
             </v-card>
           </v-container>
         </draggable>
@@ -65,7 +66,7 @@ export default {
   data() {
     return {
       sprints: [
-        { name: 'Work', duration: 52, startTime: 0, progress: 0, end: 0 },
+        { name: 'Work', duration: 1, startTime: 0, progress: 0, end: 0 },
         { name: 'Break', duration: 23, startTime: 0, progress: 0, end: 0 },
       ],
       settings: { height: 6, rounded: true },
@@ -82,8 +83,8 @@ export default {
       const timer = setInterval(() => {
         const now = new Date().getTime()
 
-        currentSession.progress = prettyMilliseconds(now - currentSession.Time)
-        console.log(currentSession.progress)
+        currentSession.progress = now - currentSession.Time
+        console.log(prettyMilliseconds(currentSession.progress))
       }, 1000)
     },
     endTimer() {
