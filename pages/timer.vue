@@ -78,7 +78,7 @@ export default {
         { name: 'Break', duration: 0.05, progress: 0 },
       ],
       settings: {
-        height: 6,
+        height: 20,
         rounded: true,
         timer: { interval: 1000, autoRestart: true },
       },
