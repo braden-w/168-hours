@@ -86,9 +86,9 @@ export default {
       this.sprints.push({ name, duration })
     },
     startTimer(indexOfCurrentTimer) {
-      const currentTimer = this.sprints[indexOfCurrentTimer]
       this.currentSession.startTime = new Date().getTime()
       this.timer = setInterval(() => {
+        const currentTimer = this.sprints[indexOfCurrentTimer]
         currentTimer.progress += this.settings.timer.interval
         if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
           indexOfCurrentTimer += 1
