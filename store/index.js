@@ -39,7 +39,7 @@ export const mutations = {
       console.log(prettyMilliseconds(currentTimer.progress))
     }, state.settings.timer.interval)
   },
-  endTimer(state, indexOfCurrentTimer) {
+  endTimer(state) {
     state.currentSession.isRunning = false
     state.currentSession.endTime = new Date().getTime()
     clearInterval(state.timer)
