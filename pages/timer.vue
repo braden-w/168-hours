@@ -28,7 +28,7 @@
                     label="Name"
                     prepend-icon="mdi-drag"
                     @click:prepend="
-                      currentSession.isRunning
+                      this.$store.currentSession.isRunning
                         ? endTimer(index)
                         : startTimer(index)
                     "
@@ -62,13 +62,14 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 import draggable from 'vuedraggable'
 const prettyMilliseconds = require('pretty-ms')
 export default {
   components: {
     draggable,
   },
-  data() {},
   methods: {
     prettyMilliseconds(time) {
       return prettyMilliseconds(time)
