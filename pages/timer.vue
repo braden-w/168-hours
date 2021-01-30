@@ -28,7 +28,7 @@
                     label="Name"
                     prepend-icon="mdi-drag"
                     @click:prepend="
-                      !currentSession.isRunning
+                      currentSession.isRunning
                         ? endTimer(index)
                         : startTimer(index)
                     "
