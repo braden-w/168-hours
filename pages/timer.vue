@@ -82,6 +82,9 @@ export default {
         const now = new Date().getTime()
 
         currentSession.progress = now - currentSession.Time
+        if (currentSession.progress >= currentSession.duration) {
+          clearInterval(this.timer)
+        }
         console.log(prettyMilliseconds(currentSession.progress))
       }, 1000)
     },
