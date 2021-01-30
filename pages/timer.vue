@@ -51,7 +51,7 @@
 
 <script>
 import draggable from 'vuedraggable'
-const dateFormat = require('dateformat')
+const prettyMilliseconds = require('prettyMilliseconds')
 export default {
   components: {
     draggable,
@@ -74,10 +74,9 @@ export default {
       currentSession.start = new Date().getTime()
       const timer = setInterval(() => {
         const now = new Date().getTime()
-        console.log(now)
-        currentSession.progress = dateFormat(
+        currentSession.progress = prettyMilliseconds(
           now - currentSession.start,
-          'MM:ss'
+          'dddd, mmmm dS, yyyy, h:MM:ss TT'
         )
       }, 1000)
     },
