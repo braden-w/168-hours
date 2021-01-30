@@ -108,6 +108,7 @@ export default {
           if (indexOfCurrentTimer === this.sprints.length) {
             this.endTimer()
             if (this.settings.timer.autoRestart) {
+              this.clearTimers()
               this.startTimer(0)
             }
           }
