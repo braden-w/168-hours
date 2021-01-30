@@ -98,9 +98,9 @@ export default {
       }, this.settings.timer.interval)
     },
     endTimer(indexOfCurrentTimer) {
-      const currentSession = this.sprints[indexOfCurrentTimer]
+      const currentTimer = this.sprints[indexOfCurrentTimer]
       this.currentSession.isRunning = false
-      currentSession.end = new Date().getTime()
+      currentTimer.end = new Date().getTime()
       clearInterval(this.timer)
     },
   },
