@@ -84,7 +84,7 @@ export default {
         currentSession.progress = now - currentSession.startTime
         if (currentSession.progress >= currentSession.duration * 60 * 1000) {
           clearInterval(this.timer)
-          startTimer(indexOfCurrentSession + 1)
+          this.startTimer(indexOfCurrentSession + 1)
         }
         console.log(prettyMilliseconds(currentSession.progress))
       }, 1000)
