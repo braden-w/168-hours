@@ -96,8 +96,8 @@ export default {
         console.log(prettyMilliseconds(currentSession.progress))
       }, this.settings.timer.interval)
     },
-    endTimer(indexOfCurrentSession) {
-      const currentSession = this.sprints[indexOfCurrentSession]
+    endTimer(indexOfCurrentTimer) {
+      const currentSession = this.sprints[indexOfCurrentTimer]
       currentSession.end = new Date().getTime()
       clearInterval(this.timer)
     },
