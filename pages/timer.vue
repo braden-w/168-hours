@@ -45,9 +45,7 @@
                 :rounded="settings.rounded"
                 :value="sprint.progress / 10 / 60 / sprint.duration"
               ></v-progress-linear>
-              {{ sprint.progress / 1000 / 60 / sprint.duration }}
               {{ sprint.progress / 10 }}
-              {{ sprint.duration }}
             </v-card>
           </v-container>
         </draggable>
