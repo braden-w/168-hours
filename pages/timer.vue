@@ -72,7 +72,7 @@ export default {
         { name: 'Work', duration: 0.05, startTime: 0, progress: 0, end: 0 },
         { name: 'Break', duration: 0.05, startTime: 0, progress: 0, end: 0 },
       ],
-      settings: { height: 6, rounded: true },
+      settings: { height: 6, rounded: true, timer: { interval: 1000 } },
       sessions: [],
     }
   },
@@ -84,13 +84,13 @@ export default {
       const currentSession = this.sprints[indexOfCurrentSession]
       currentSession.startTime = new Date().getTime()
       this.timer = setInterval(() => {
-        currentSession.progress += 1000
+        currentSession.progress += this.settings.timer.interval
         if (currentSession.progress >= currentSession.duration * 60 * 1000) {
           clearInterval(this.timer)
           this.startTimer(indexOfCurrentSession + 1)
         }
         console.log(prettyMilliseconds(currentSession.progress))
-      }, 1000)
+      }, this.settings.timer.interval)
     },
     endTimer(indexOfCurrentSession) {
       const currentSession = this.sprints[indexOfCurrentSession]
