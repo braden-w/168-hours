@@ -77,7 +77,11 @@ export default {
         { name: 'Work', duration: 0.05, progress: 0 },
         { name: 'Break', duration: 0.05, progress: 0 },
       ],
-      settings: { height: 6, rounded: true, timer: { interval: 1000 } },
+      settings: {
+        height: 6,
+        rounded: true,
+        timer: { interval: 1000, autoRestart: true },
+      },
       currentSession: {
         isRunning: false,
         startTime: 0,
@@ -103,6 +107,9 @@ export default {
           indexOfCurrentTimer += 1
           if (indexOfCurrentTimer === this.sprints.length) {
             this.endTimer()
+            if (this.settings.timer.autoRestart) {
+              this.startTimer(0)
+            }
           }
         }
         console.log(prettyMilliseconds(currentTimer.progress))
