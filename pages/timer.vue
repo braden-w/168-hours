@@ -101,7 +101,7 @@ export default {
         currentTimer.progress += this.settings.timer.interval
         if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
           indexOfCurrentTimer += 1
-          if (indexOfCurrentTimer === sprints.length) {
+          if (indexOfCurrentTimer === this.sprints.length) {
             this.endTimer()
           }
         }
