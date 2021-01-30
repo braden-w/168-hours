@@ -76,6 +76,7 @@ export default {
         const now = new Date().getTime()
 
         currentSession.progress = prettyMilliseconds(now - currentSession.start)
+        console.log(currentSession.progress)
       }, 1000)
     },
     endTimer() {
