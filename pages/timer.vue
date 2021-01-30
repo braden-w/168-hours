@@ -75,7 +75,8 @@ export default {
     },
     ...mapMutations([
       'endTimer',
-      'startTimer', // also supports payload `this.nameOfMutation(amount)`
+      'startTimer',
+      'addSprint' // also supports payload `this.nameOfMutation(amount)`
     ]),
   },
 }
