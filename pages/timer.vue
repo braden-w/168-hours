@@ -59,8 +59,8 @@ export default {
   data() {
     return {
       sprints: [
-        { name: 'Work', duration: '52', progress: 0, start: 0, end: 0 },
-        { name: 'Break', duration: '23', progress: 0, start: 0, end: 0 },
+        { name: 'Work', duration: '52', progress: 0, startTime: 0, end: 0 },
+        { name: 'Break', duration: '23', progress: 0, startTime: 0, end: 0 },
       ],
       sessions: [],
     }
@@ -71,11 +71,11 @@ export default {
     },
     startTimer(indexOfCurrentSession) {
       const currentSession = this.sprints[indexOfCurrentSession]
-      currentSession.start = new Date().getTime()
+      currentSession.Time = new Date().getTime()
       const timer = setInterval(() => {
         const now = new Date().getTime()
 
-        currentSession.progress = prettyMilliseconds(now - currentSession.start)
+        currentSession.progress = prettyMilliseconds(now - currentSession.Time)
         console.log(currentSession.progress)
       }, 1000)
     },
