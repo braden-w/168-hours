@@ -101,6 +101,9 @@ export default {
         currentTimer.progress += this.settings.timer.interval
         if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
           indexOfCurrentTimer += 1
+          if(indexOfCurrentTimer === sprints.length){
+            this.endTimer()
+          }
         }
         console.log(prettyMilliseconds(currentTimer.progress))
       }, this.settings.timer.interval)
