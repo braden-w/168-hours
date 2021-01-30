@@ -12,13 +12,13 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addSprint(name, duration) {
+  addSprint(state, name, duration) {
     this.sprints.push({ name, duration })
   },
   prettyMilliseconds(time) {
     return prettyMilliseconds(time)
   },
-  startTimer(indexOfCurrentTimer) {
+  startTimer(state, indexOfCurrentTimer) {
     this.currentSession.startTime = new Date().getTime()
     this.currentSession.isRunning = true
     this.timer = setInterval(() => {
@@ -40,7 +40,7 @@ export const mutations = {
   clearTimers() {
     this.sprints.forEach((sprint) => (sprint.progress = 0))
   },
-  endTimer(indexOfCurrentTimer) {
+  endTimer(state, indexOfCurrentTimer) {
     this.currentSession.isRunning = false
     this.currentSession.endTime = new Date().getTime()
     clearInterval(this.timer)
