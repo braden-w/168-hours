@@ -73,6 +73,8 @@ export default {
       const timer = setInterval(() => {
         const now = new Date().getTime()
         console.log(now)
+        this.sprints[indexOfCurrentSession].progress =
+          now - this.sprints[indexOfCurrentSession].start
       }, 1000)
     },
     endTimer() {
