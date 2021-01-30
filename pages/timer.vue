@@ -9,14 +9,14 @@
       <v-divider></v-divider>
       <v-card-text>
         <draggable
-          :list="sprints"
+          :list="this.$store.state.sprints"
           class="list-group"
           draggable=".item"
           @start="dragging = true"
           @end="dragging = false"
         >
           <v-container
-            v-for="(sprint, index) in sprints"
+            v-for="(sprint, index) in this.$store.state.sprints"
             :key="index"
             class="item"
           >
@@ -28,7 +28,7 @@
                     label="Name"
                     prepend-icon="mdi-drag"
                     @click:prepend="
-                      this.$store.currentSession.isRunning
+                      this.$store.state.currentSession.isRunning
                         ? endTimer(index)
                         : startTimer(index)
                     "
@@ -45,8 +45,8 @@
                 ></v-col>
               </v-row>
               <v-progress-linear
-                :height="settings.height"
-                :rounded="settings.rounded"
+                :height="this.$store.state.settings.height"
+                :rounded="this.$store.state.settings.rounded"
                 :value="(sprint.progress / 1000 / 60 / sprint.duration) * 100"
               >
                 <template #default="{ value }">
