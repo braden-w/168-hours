@@ -40,7 +40,7 @@
                   </v-text-field
                 ></v-col>
               </v-row>
-              <v-progress-linear></v-progress-linear>
+              <v-progress-linear :height="settings.height"></v-progress-linear>
             </v-card>
           </v-container>
         </draggable>
@@ -62,6 +62,7 @@ export default {
         { name: 'Work', duration: '52', startTime: 0, progress: 0, end: 0 },
         { name: 'Break', duration: '23', startTime: 0, progress: 0, end: 0 },
       ],
+      settings: { height: 6 },
       sessions: [],
     }
   },
