@@ -50,7 +50,7 @@
                 :value="(sprint.progress / 1000 / 60 / sprint.duration) * 100"
               >
                 <template #default="{ value }">
-                  <strong>{{ sprint.progress / 1000 }}</strong>
+                  <strong>{{ prettyMilliseconds(sprint.progress) }}</strong>
                 </template>
               </v-progress-linear>
             </v-card>
@@ -89,6 +89,9 @@ export default {
   methods: {
     addSprint(name, duration) {
       this.sprints.push({ name, duration })
+    },
+    prettyMilliseconds(time){
+      return prettyMilliseconds(time)
     },
     startTimer(indexOfCurrentTimer) {
       this.currentSession.startTime = new Date().getTime()
