@@ -70,6 +70,9 @@ export default {
     },
     startTimer(index) {
       this.currentSession.start = new Date().getTime()
+      const timer = setInterval(() => {
+        const now = new Date().getTime()
+      }, 1000)
     },
     endTimer() {
       this.currentSession.end = new Date().getTime()
