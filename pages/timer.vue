@@ -115,6 +115,9 @@ export default {
         console.log(prettyMilliseconds(currentTimer.progress))
       }, this.settings.timer.interval)
     },
+    clearTimers() {
+      this.sprints.forEach((sprint) => (sprint.progress = 0))
+    },
     endTimer(indexOfCurrentTimer) {
       this.currentSession.isRunning = false
       this.currentSession.endTime = new Date().getTime()
