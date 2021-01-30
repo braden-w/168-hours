@@ -48,8 +48,11 @@
                 :height="settings.height"
                 :rounded="settings.rounded"
                 :value="(sprint.progress / 1000 / 60 / sprint.duration) * 100"
-              ></v-progress-linear>
-              {{ sprint.progress / 1000 }}
+              >
+                <template #default="{ value }">
+                  <strong>{{ sprint.progress / 1000 }}</strong>
+                </template>
+              </v-progress-linear>
             </v-card>
           </v-container>
         </draggable>
