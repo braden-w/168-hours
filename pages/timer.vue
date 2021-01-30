@@ -68,7 +68,7 @@ export default {
     addSprint(name, duration) {
       this.sprints.push({ name, duration })
     },
-    startTimer(index) {
+    startTimer(indexOfCurrentSession) {
       this.currentSession.start = new Date().getTime()
       const timer = setInterval(() => {
         const now = new Date().getTime()
