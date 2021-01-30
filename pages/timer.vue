@@ -87,6 +87,7 @@ export default {
     },
     startTimer(indexOfCurrentTimer) {
       this.currentSession.startTime = new Date().getTime()
+      this.surrentSession.isRunning = true
       this.timer = setInterval(() => {
         const currentTimer = this.sprints[indexOfCurrentTimer]
         currentTimer.progress += this.settings.timer.interval
@@ -98,6 +99,7 @@ export default {
     },
     endTimer(indexOfCurrentTimer) {
       const currentSession = this.sprints[indexOfCurrentTimer]
+      this.surrentSession.isRunning = true
       currentSession.end = new Date().getTime()
       clearInterval(this.timer)
     },
