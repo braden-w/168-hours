@@ -90,7 +90,7 @@ export default {
     addSprint(name, duration) {
       this.sprints.push({ name, duration })
     },
-    prettyMilliseconds(time){
+    prettyMilliseconds(time) {
       return prettyMilliseconds(time)
     },
     startTimer(indexOfCurrentTimer) {
@@ -101,7 +101,7 @@ export default {
         currentTimer.progress += this.settings.timer.interval
         if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
           indexOfCurrentTimer += 1
-          if(indexOfCurrentTimer === sprints.length){
+          if (indexOfCurrentTimer === sprints.length) {
             this.endTimer()
           }
         }
@@ -109,9 +109,8 @@ export default {
       }, this.settings.timer.interval)
     },
     endTimer(indexOfCurrentTimer) {
-      const currentTimer = this.sprints[indexOfCurrentTimer]
       this.currentSession.isRunning = false
-      currentTimer.end = new Date().getTime()
+      this.currentSession.endTime = new Date().getTime()
       clearInterval(this.timer)
     },
   },
