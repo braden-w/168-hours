@@ -1,3 +1,4 @@
+const prettyMilliseconds = require('pretty-ms')
 export const state = () => ({
   sprints: [
     { name: 'Work', duration: 0.05, progress: 0 },
@@ -5,10 +6,10 @@ export const state = () => ({
   ],
   currentSession: {
     isRunning: false,
-  sessions: [],
     startTime: 0,
     endTime: 0,
   },
+  sessions: [],
   settings: {
     height: 20,
     rounded: true,
