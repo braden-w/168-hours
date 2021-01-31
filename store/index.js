@@ -45,4 +45,9 @@ export const mutations = {
     state.currentSession.endTime = new Date().getTime()
     clearInterval(state.timer)
   },
+
+  clearTimers(state) {
+    state.sprints.forEach((sprint) => (sprint.progress = 0))
+  },
+}
 }
