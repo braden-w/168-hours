@@ -4,7 +4,7 @@
       {{ sprints }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
-        <v-btn color="success" @click="startTimer(0)">Start timer</v-btn>
+        <v-btn color="success" @click="startTimer(0)"><span v-if="currentSession.isRunning">End Timer</span> <span v-else>Start Timer</span></span></v-btn>
         <v-btn
           color="primary"
           @click="addSprint({ name: 'Hi', duration: 10, progress: 0 })"
