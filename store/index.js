@@ -37,7 +37,6 @@ export const mutations = {
           }
         }
       }
-      console.log(prettyMilliseconds(currentTimer.progress))
     }, state.settings.timer.interval)
   },
   endTimer(state) {
