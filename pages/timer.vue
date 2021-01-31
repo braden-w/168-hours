@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      {{ this.$store.state.settings }}
+      {{ this.$store.state.sprints }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
         <v-btn color="success" @click="startTimer(0)">Start timer</v-btn>
@@ -64,8 +64,9 @@
 
 <script>
 import { mapMutations } from 'vuex'
-
 import draggable from 'vuedraggable'
+const prettyMilliseconds = require('pretty-ms')
+
 export default {
   components: {
     draggable,
