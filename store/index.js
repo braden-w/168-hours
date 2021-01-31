@@ -18,8 +18,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addSprint(state, { name, duration }) {
-    state.sprints.push({ name, duration })
+  addSprint(state, payload) {
+    state.sprints.push(payload)
   },
   startTimer(state, indexOfCurrentTimer) {
     state.currentSession.startTime = new Date().getTime()

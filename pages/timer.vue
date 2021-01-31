@@ -5,7 +5,10 @@
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
         <v-btn color="success" @click="startTimer(0)">Start timer</v-btn>
-        <v-btn color="primary" @click="addSprint({ name: 'Hi', duration: 10 })">
+        <v-btn
+          color="primary"
+          @click="addSprint({ name: 'Hi', duration: 10, progress: 0 })"
+        >
           Add Sprint
         </v-btn>
       </v-card-actions>
