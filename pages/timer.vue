@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      {{ this.$store.state }}
+      {{ timer }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
         <v-btn color="success" @click="startTimer(0)">Start timer</v-btn>
@@ -10,14 +10,14 @@
       <v-divider></v-divider>
       <v-card-text>
         <draggable
-          :list="this.$store.state.sprints"
+          :list="timer.sprints"
           class="list-group"
           draggable=".item"
           @start="dragging = true"
           @end="dragging = false"
         >
           <v-container
-            v-for="(sprint, index) in this.$store.state.sprints"
+            v-for="(sprint, index) in timer.sprints"
             :key="index"
             class="item"
           >
