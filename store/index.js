@@ -5,6 +5,11 @@ export const state = () => ({
     endTime: 0,
   },
   sessions: [],
+  settings: {
+    height: 20,
+    rounded: true,
+    timer: { interval: 1000, autoRestart: true },
+  },
 })
 // export const mutations = {
 // addSprint(state, name, duration) {
