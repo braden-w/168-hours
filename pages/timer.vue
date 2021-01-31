@@ -80,8 +80,8 @@ export default {
       return prettyMilliseconds(time)
     },
     ...mapMutations([
-      'endTimer',
       'startTimer',
+      'endTimer',
       'addSprint',
       'clearTimers', // also supports payload `this.nameOfMutation(amount)`
     ]),
