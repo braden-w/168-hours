@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      {{ timer }}
+      {{ sprints }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
         <v-btn color="success" @click="startTimer(0)">Start timer</v-btn>
@@ -10,14 +10,14 @@
       <v-divider></v-divider>
       <v-card-text>
         <draggable
-          :list="timer.sprints"
+          :list="sprints"
           class="list-group"
           draggable=".item"
           @start="dragging = true"
           @end="dragging = false"
         >
           <v-container
-            v-for="(sprint, index) in timer.sprints"
+            v-for="(sprint, index) in sprints"
             :key="index"
             class="item"
           >
@@ -73,7 +73,7 @@ export default {
     draggable,
   },
   computed: {
-    ...mapState(['currentSession', 'settings']),
+    ...mapState(['sprints', 'currentSession', 'settings']),
   },
   methods: {
     prettyMilliseconds(time) {
