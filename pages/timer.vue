@@ -29,7 +29,7 @@
                     label="Name"
                     prepend-icon="mdi-drag"
                     @click:prepend="
-                      timer.currentSession.isRunning
+                      currentSession.isRunning
                         ? endTimer(index)
                         : startTimer(index)
                     "
@@ -73,7 +73,7 @@ export default {
     draggable,
   },
   computed: {
-    ...mapState(['timer', 'settings']),
+    ...mapState(['currentSession', 'settings']),
   },
   methods: {
     prettyMilliseconds(time) {
