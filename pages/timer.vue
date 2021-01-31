@@ -72,6 +72,9 @@ export default {
   components: {
     draggable,
   },
+  computed: {
+    ...mapState(['timer']),
+  },
   methods: {
     prettyMilliseconds(time) {
       return prettyMilliseconds(time)
