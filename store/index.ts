@@ -1,3 +1,9 @@
+interface Sprint {
+  name: string;
+  duration: number;
+  progress: number;
+}
+
 export const state = () => ({
   sprints: [
     { name: 'Work', duration: 0.05, progress: 0 },
@@ -18,10 +24,10 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addSprint(state, payload) {
-    state.sprints.push(payload)
+  addSprint({sprints }:{ sprints: Sprint[] }, payload: any) {
+    sprints.push(payload)
   },
-  startTimer(state, indexOfCurrentTimer) {
+  startTimer(state: any, indexOfCurrentTimer: number) {
     state.currentSession.startTime = new Date().getTime()
     state.currentSession.isRunning = true
     state.timer = setInterval(() => {
@@ -39,27 +45,30 @@ export const mutations = {
       }
     }, state.settings.timer.interval)
   },
-  endTimer(state) {
+  endTimer(state: any) {
     state.currentSession.isRunning = false
     state.currentSession.endTime = new Date().getTime()
     clearInterval(state.timer)
   },
 
-  clearTimers(state) {
+  clearTimers(state: any) {
     state.sprints.forEach((sprint) => (sprint.progress = 0))
   },
 }
 export const actions = {
-  addSprint({ commit }, payload) {
+  addSprint(
+    { commit }: any,
+    payload: { name: string; duration: number; progress: number }
+  ) {
     commit('addSprint', payload)
   },
-  startTimer({ commit }, payload) {
+  startTimer({ commit }: any, payload: number) {
     commit('startTimer', payload)
   },
-  endTimer({ commit }, payload) {
+  endTimer({ commit }: any, payload: any) {
     commit('endTimer', payload)
   },
-  clearTimers({ commit }, payload) {
+  clearTimers({ commit }: any, payload: any) {
     commit('clearTimers', payload)
   },
 }
