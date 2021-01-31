@@ -50,4 +50,17 @@ export const mutations = {
     state.sprints.forEach((sprint) => (sprint.progress = 0))
   },
 }
+export const actions = {
+  addSprint({ commit }, ...args) {
+    commit('addSprint', ...args)
+  },
+  startTimer({ commit }, ...args) {
+    commit('startTimer', ...args)
+  },
+  endTimer({ commit }, ...args) {
+    commit('endTimer', ...args)
+  },
+  clearTimers({ commit }, ...args) {
+    commit('clearTimers', ...args)
+  },
 }

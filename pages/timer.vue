@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 import draggable from 'vuedraggable'
 const prettyMilliseconds = require('pretty-ms')
@@ -79,7 +79,7 @@ export default {
     prettyMilliseconds(time) {
       return prettyMilliseconds(time)
     },
-    ...mapMutations(['startTimer', 'endTimer', 'addSprint', 'clearTimers']),
+    ...mapActions(['startTimer', 'endTimer', 'addSprint', 'clearTimers']),
   },
 }
 </script>
