@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      {{ this.$store.state.sprints }}
+      {{ this.$store.state }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
         <v-btn color="success" @click="startTimer(0)">Start timer</v-btn>
