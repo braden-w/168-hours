@@ -17,7 +17,6 @@ export const state = () => ({
   },
 })
 
-
 export const mutations = {
   addSprint(state, name, duration) {
     state.sprints.push({ name, duration })
@@ -39,7 +38,7 @@ export const mutations = {
         }
       }
       console.log(prettyMilliseconds(currentTimer.progress))
-    }, rootState.settings.timer.interval)
+    }, state.settings.timer.interval)
   },
   endTimer(state) {
     state.currentSession.isRunning = false
