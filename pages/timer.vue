@@ -29,7 +29,7 @@
                     label="Name"
                     prepend-icon="mdi-drag"
                     @click:prepend="
-                      this.$store.state.currentSession.isRunning
+                      timer.currentSession.isRunning
                         ? endTimer(index)
                         : startTimer(index)
                     "
