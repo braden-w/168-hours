@@ -59,7 +59,7 @@ export const mutations = {
 export const actions = {
   addSprint(
     { commit }: any,
-    payload: { name: string; duration: number; progress: number }
+    payload: Sprint
   ) {
     commit('addSprint', payload)
   },
