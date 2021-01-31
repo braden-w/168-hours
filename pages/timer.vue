@@ -46,8 +46,8 @@
                 ></v-col>
               </v-row>
               <v-progress-linear
-                :height="this.$store.state.settings.height"
-                :rounded="this.$store.state.settings.rounded"
+                :height="settings.height"
+                :rounded="settings.rounded"
                 :value="(sprint.progress / 1000 / 60 / sprint.duration) * 100"
               >
                 <template #default="{ value }">
@@ -73,7 +73,7 @@ export default {
     draggable,
   },
   computed: {
-    ...mapState(['timer']),
+    ...mapState(['timer', 'settings']),
   },
   methods: {
     prettyMilliseconds(time) {
