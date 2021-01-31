@@ -79,7 +79,12 @@ export default {
     prettyMilliseconds(time) {
       return prettyMilliseconds(time)
     },
-    ...mapMutations(['startTimer', 'endTimer', 'addSprint', 'clearTimers']),
+    ...mapMutations({
+      startTimer: 'timer/startTimer',
+      endTimer: 'timer/endTimer',
+      addSprint: 'timer/addSprint',
+      clearTimers: 'timer/clearTimers',
+    }),
   },
 }
 </script>
