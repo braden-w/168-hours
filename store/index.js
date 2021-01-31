@@ -51,16 +51,16 @@ export const mutations = {
   },
 }
 export const actions = {
-  addSprint({ commit }, ...args) {
-    commit('addSprint', ...args)
+  addSprint({ commit }, payload) {
+    commit('addSprint', payload)
   },
-  startTimer({ commit }, ...args) {
-    commit('startTimer', ...args)
+  startTimer({ commit }, payload) {
+    commit('startTimer', payload)
   },
-  endTimer({ commit }, ...args) {
-    commit('endTimer', ...args)
+  endTimer({ commit }, payload) {
+    commit('endTimer', payload)
   },
-  clearTimers({ commit }, ...args) {
-    commit('clearTimers', ...args)
+  clearTimers({ commit }, payload) {
+    commit('clearTimers', payload)
   },
 }
