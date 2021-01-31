@@ -55,6 +55,7 @@ export const mutations = {
     state.sprints.forEach((sprint) => (sprint.progress = 0))
   },
 }
+
 export const actions = {
   addSprint(
     { commit }: any,
