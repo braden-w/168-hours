@@ -18,7 +18,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addSprint(state, name, duration) {
+  addSprint(state, { name, duration }) {
     state.sprints.push({ name, duration })
   },
   startTimer(state, indexOfCurrentTimer) {
