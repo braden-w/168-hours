@@ -75,8 +75,6 @@ export const actions = {
       'startTimer',
       setInterval(() => {
         const currentSprint = state.sprints[indexOfCurrentSprint]
-        const interval = state.settings.timer.interval
-        commit('increaseSprintByInterval', { indexOfCurrentSprint, interval })
         if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
           indexOfCurrentSprint += 1
           if (indexOfCurrentSprint === state.sprints.length) {
@@ -87,6 +85,7 @@ export const actions = {
             }
           }
         }
+        commit('increaseSprintByInterval', { indexOfCurrentSprint, state.settings.timer.interval })
       }, state.settings.timer.interval)
     )
   },
