@@ -26,20 +26,8 @@ export const mutations = {
     sprints.push(payload)
   },
   startTimer(state: any, indexOfCurrentSprint: number) {
-    state.timer = setInterval(() => {
-      const currentSprint = state.sprints[indexOfCurrentSprint]
-      currentSprint.progress += state.settings.timer.interval
-      if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
-        indexOfCurrentSprint += 1
-        if (indexOfCurrentSprint === state.sprints.length) {
-          state.endTimer()
-          if (state.settings.timer.autoRestart) {
-            state.clearTimers()
-            state.startTimer(0)
-          }
-        }
-      }
-    }, state.settings.timer.interval)
+    
+  },
   },
   endTimer(state: any) {
     clearInterval(state.timer)
@@ -71,10 +59,23 @@ export const actions = {
       dispatch('startTimer', payload)
     }
   },
-  startTimer({ commit }: any, payload: number) {
+  startTimer({ state,commit }: any, indexOfCurrentSprint: number) {
     commit('toggleIsRunning')
     commit('logCurrentSession')
-    commit('startTimer', payload)
+    state.timer = setInterval(() => {
+      commit('increaseSprint',indexOfCurrentSprint, state.settings.timer.interval)
+      currentSprint.progress += state.settings.timer.interval
+      if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
+        indexOfCurrentSprint += 1
+        if (indexOfCurrentSprint === state.sprints.length) {
+          state.endTimer()
+          if (state.settings.timer.autoRestart) {
+            state.clearTimers()
+            state.startTimer(0)
+          }
+        }
+      }
+    }, state.settings.timer.interval)
   },
   endTimer({ commit }: any, payload: any) {
     commit('toggleIsRunning')
