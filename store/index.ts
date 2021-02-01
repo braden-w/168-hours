@@ -85,7 +85,10 @@ export const actions = {
             }
           }
         }
-        commit('increaseSprintByInterval', { indexOfCurrentSprint, state.settings.timer.interval })
+        commit('increaseSprintByInterval', {
+          indexOfCurrentSprint,
+          interval: state.settings.timer.interval,
+        })
       }, state.settings.timer.interval)
     )
   },
