@@ -4,7 +4,10 @@
       {{ sprints }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
-        <v-btn color="success" @click="startTimer(0)"><span v-if="currentSession.isRunning">End Timer</span> <span v-else>Start Timer</span></span></v-btn>
+        <v-btn color="success" @click="startOrEndTimer(0)">
+          <span v-if="currentSession.isRunning">End Timer</span>
+          <span v-else>Start Timer</span></v-btn
+        >
         <v-btn
           color="primary"
           @click="addSprint({ name: 'Hi', duration: 10, progress: 0 })"
@@ -33,11 +36,7 @@
                     v-model="sprint.name"
                     label="Name"
                     prepend-icon="mdi-drag"
-                    @click:prepend="
-                      currentSession.isRunning
-                        ? endTimer(index)
-                        : startTimer(index)
-                    "
+                    @click:prepend="startOrEndTimer(index)"
                   >
                   </v-text-field>
                 </v-col>
@@ -84,7 +83,7 @@ export default {
     prettyMilliseconds(time) {
       return prettyMilliseconds(time)
     },
-    ...mapActions(['startTimer', 'endTimer', 'addSprint', 'clearTimers']),
+    ...mapActions(['startOrEndTimer', 'addSprint', 'clearTimers']),
   },
 }
 </script>

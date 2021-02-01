@@ -1,7 +1,7 @@
 interface Sprint {
-  name: string;
-  duration: number;
-  progress: number;
+  name: string
+  duration: number
+  progress: number
 }
 
 export const state = () => ({
@@ -24,7 +24,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addSprint({sprints }:{ sprints: Sprint[] }, payload: any) {
+  addSprint({ sprints }: { sprints: Sprint[] }, payload: any) {
     sprints.push(payload)
   },
   startTimer(state: any, indexOfCurrentTimer: number) {
@@ -59,9 +59,17 @@ export const mutations = {
 export const actions = {
   addSprint(
     { commit }: any,
-    payload: Sprint
+    payload: { name: string; duration: number; progress: number }
   ) {
     commit('addSprint', payload)
+  },
+
+  startOrEndTimer({ state, dispatch }: any, payload: number) {
+    if (state.currentSession.isRunning) {
+      dispatch('endTimer')
+    } else {
+      dispatch('startTimer', payload)
+    }
   },
   startTimer({ commit }: any, payload: number) {
     commit('startTimer', payload)
