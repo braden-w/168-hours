@@ -11,8 +11,7 @@ export const state = () => ({
   ],
   currentSession: {
     isRunning: false,
-    startTime: 0,
-    endTime: 0,
+    range: [],
   },
   sessions: [],
   settings: {
