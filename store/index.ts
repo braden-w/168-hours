@@ -25,13 +25,13 @@ export const mutations = {
   addSprint({ sprints }: { sprints: Sprint[] }, payload: any) {
     sprints.push(payload)
   },
-  startTimer(state: any, indexOfCurrentTimer: number) {
+  startTimer(state: any, indexOfCurrentSprint: number) {
     state.timer = setInterval(() => {
-      const currentTimer = state.sprints[indexOfCurrentTimer]
-      currentTimer.progress += state.settings.timer.interval
-      if (currentTimer.progress >= currentTimer.duration * 60 * 1000) {
-        indexOfCurrentTimer += 1
-        if (indexOfCurrentTimer === state.sprints.length) {
+      const currentSprint = state.sprints[indexOfCurrentSprint]
+      currentSprint.progress += state.settings.timer.interval
+      if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
+        indexOfCurrentSprint += 1
+        if (indexOfCurrentSprint === state.sprints.length) {
           state.endTimer()
           if (state.settings.timer.autoRestart) {
             state.clearTimers()
