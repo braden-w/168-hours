@@ -30,7 +30,10 @@ export const mutations = {
   },
   increaseSprintByInterval(
     { sprints }: { sprints: Sprint[] },
-    { indexOfCurrentSprint, interval }
+    {
+      indexOfCurrentSprint,
+      interval,
+    }: { indexOfCurrentSprint: number; interval: number }
   ) {
     sprints[indexOfCurrentSprint].progress += interval
   },
