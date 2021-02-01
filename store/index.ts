@@ -50,14 +50,14 @@ export const mutations = {
     clearInterval(state.timer)
   },
 
-  toggleIsRunning({ currentSession }) {
+  toggleIsRunning({ currentSession }: any) {
     currentSession.isRunning = !currentSession.isRunning
   },
-  setPropertyAsCurrentTime(property) {
+  setPropertyAsCurrentTime(property: number) {
     property = new Date().getTime()
   },
   clearTimers(state: any) {
-    state.sprints.forEach((sprint) => (sprint.progress = 0))
+    state.sprints.forEach((sprint: Sprint) => (sprint.progress = 0))
   },
 }
 
