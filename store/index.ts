@@ -31,7 +31,7 @@ export const mutations = {
     indexOfCurrentSprint: number,
     interval: number
   ) {
-    state.sprints[indexOfCurrentSprint] += interval
+    state.sprints[indexOfCurrentSprint].progress += interval
   },
   endTimer(state: any) {
     clearInterval(state.timer)
