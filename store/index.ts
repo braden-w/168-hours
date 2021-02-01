@@ -87,11 +87,12 @@ export const actions = {
               dispatch('startTimer', 0)
             }
           }
+        } else {
+          commit('increaseSprintByInterval', {
+            indexOfCurrentSprint,
+            interval: settings.timer.interval,
+          })
         }
-        commit('increaseSprintByInterval', {
-          indexOfCurrentSprint,
-          interval: settings.timer.interval,
-        })
       }, settings.timer.interval)
     )
   },
