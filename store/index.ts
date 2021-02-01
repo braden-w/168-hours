@@ -95,13 +95,13 @@ export const actions = {
       }, settings.timer.interval)
     )
   },
-  endTimer({ commit }: any, payload: any) {
+  endTimer({ commit }: any) {
     commit('toggleIsRunning')
     commit('logCurrentSession')
-    commit('endTimer', payload)
+    commit('endTimer')
   },
 
-  clearTimers({ commit }: any, payload: any) {
-    commit('clearTimers', payload)
+  clearTimers({ commit }: any) {
+    commit('clearTimers')
   },
 }
