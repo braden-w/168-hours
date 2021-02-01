@@ -6,8 +6,8 @@ interface Sprint {
 
 export const state = () => ({
   sprints: [
-    { name: 'Work', duration: 52, progress: 0 },
-    { name: 'Break', duration: 28, progress: 0 },
+    { name: 'Work', duration: 0.05, progress: 0 },
+    { name: 'Break', duration: 0.05, progress: 0 },
   ],
   currentSession: {
     isRunning: false,
