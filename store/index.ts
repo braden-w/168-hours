@@ -61,6 +61,10 @@ export const mutations = {
       },
       {}
     )
+    const audio = new Audio(
+      'https://www.myinstants.com/media/sounds/preview_4.mp3'
+    )
+    audio.play()
   },
 }
 
