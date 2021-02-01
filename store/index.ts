@@ -9,7 +9,6 @@ export const state = () => ({
     { name: 'Work', duration: 0.05, progress: 0 },
     { name: 'Break', duration: 0.05, progress: 0 },
   ],
-
   currentSession: {
     isRunning: false,
     startTime: 0,
@@ -49,6 +48,10 @@ export const mutations = {
     state.currentSession.isRunning = false
     state.currentSession.endTime = new Date().getTime()
     clearInterval(state.timer)
+  },
+
+  toggleIsRunning({ currentSession }) {
+    currentSession.isRunning = !currentSession.isRunning
   },
 
   clearTimers(state: any) {
