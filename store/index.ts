@@ -52,12 +52,12 @@ export const mutations = {
     state.sprints.forEach((sprint: Sprint) => (sprint.progress = 0))
   },
 
-  notify() {
+  notify(state: any, { name }: { name: string }) {
     // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification#Parameters
     this._vm.$notification.show(
-      'Hello World',
+      `${name} has finished!`,
       {
-        body: 'This is an example!',
+        body: '168 Hours',
       },
       {}
     )
@@ -91,7 +91,7 @@ export const actions = {
         const currentSprint = sprints[indexOfCurrentSprint]
         if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
           indexOfCurrentSprint += 1
-          commit('notify')
+          commit('notify', currentSprint)
           if (indexOfCurrentSprint === sprints.length) {
             commit('endTimer')
             if (settings.timer.autoRestart) {
