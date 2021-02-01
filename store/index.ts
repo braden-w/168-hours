@@ -77,10 +77,10 @@ export const actions = {
         if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
           indexOfCurrentSprint += 1
           if (indexOfCurrentSprint === state.sprints.length) {
-            state.endTimer()
+            commit('endTimer')
             if (state.settings.timer.autoRestart) {
-              state.clearTimers()
-              state.startTimer(0)
+              commit('clearTimers')
+              commit('startTimer', 0)
             }
           }
         }
