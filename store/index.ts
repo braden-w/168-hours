@@ -56,11 +56,11 @@ export const actions = {
     commit('addSprint', payload)
   },
 
-  startOrEndTimer({ state, dispatch }: any, payload: number) {
+  startOrEndTimer({ state, dispatch }: any, indexOfCurrentSprint: number) {
     if (state.currentSession.isRunning) {
       dispatch('endTimer')
     } else {
-      dispatch('startTimer', payload)
+      dispatch('startTimer', indexOfCurrentSprint)
     }
   },
   startTimer({ state, commit }: any, indexOfCurrentSprint: number) {
