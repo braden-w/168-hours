@@ -69,7 +69,7 @@ export const actions = {
     }
   },
   startTimer(
-    { state: { sprints, settings }, commit }: any,
+    { state: { sprints, settings }, commit, dispatch }: any,
     indexOfCurrentSprint: number
   ) {
     commit('toggleIsRunning')
@@ -84,7 +84,7 @@ export const actions = {
             commit('endTimer')
             if (settings.timer.autoRestart) {
               commit('clearTimers')
-              commit('startTimer', 0)
+              dispatch('startTimer', 0)
             }
           }
         }
