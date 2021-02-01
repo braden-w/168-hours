@@ -26,8 +26,6 @@ export const mutations = {
     sprints.push(payload)
   },
   startTimer(state: any, indexOfCurrentTimer: number) {
-    state.currentSession.startTime = new Date().getTime()
-    state.currentSession.isRunning = true
     state.timer = setInterval(() => {
       const currentTimer = state.sprints[indexOfCurrentTimer]
       currentTimer.progress += state.settings.timer.interval
@@ -44,8 +42,6 @@ export const mutations = {
     }, state.settings.timer.interval)
   },
   endTimer(state: any) {
-    state.currentSession.isRunning = false
-    state.currentSession.endTime = new Date().getTime()
     clearInterval(state.timer)
   },
 
@@ -76,9 +72,13 @@ export const actions = {
     }
   },
   startTimer({ commit }: any, payload: number) {
+    commit('toggleIsRunning')
+    commit('logCurrentSession')
     commit('startTimer', payload)
   },
   endTimer({ commit }: any, payload: any) {
+    commit('toggleIsRunning')
+    commit('logCurrentSession')
     commit('endTimer', payload)
   },
   clearTimers({ commit }: any, payload: any) {
