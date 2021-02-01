@@ -16,6 +16,7 @@
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12",
     "pretty-ms": "^7.0.1",
+    "vue-native-notification": "^1.1.1",
     "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
