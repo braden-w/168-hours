@@ -1,7 +1,6 @@
 <template>
   <v-container>
     <v-card>
-      {{ sprints }}
       <v-card-title>Settings</v-card-title>
       <v-card-actions>
         <v-btn color="success" @click="startOrEndTimer(0)">
