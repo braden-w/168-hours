@@ -51,6 +51,17 @@ export const mutations = {
   clearTimers(state: any) {
     state.sprints.forEach((sprint: Sprint) => (sprint.progress = 0))
   },
+
+  // notify() {
+  //   // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification#Parameters
+  //   this.$notification.show(
+  //     'Hello World',
+  //     {
+  //       body: 'This is an example!',
+  //     },
+  //     {}
+  //   )
+  // },
 }
 
 export const actions = {
