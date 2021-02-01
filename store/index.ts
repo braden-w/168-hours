@@ -68,18 +68,21 @@ export const actions = {
       dispatch('startTimer', indexOfCurrentSprint)
     }
   },
-  startTimer({ state, commit }: any, indexOfCurrentSprint: number) {
+  startTimer(
+    { state: { sprints, settings }, commit }: any,
+    indexOfCurrentSprint: number
+  ) {
     commit('toggleIsRunning')
     commit('logCurrentSession')
     commit(
       'startTimer',
       setInterval(() => {
-        const currentSprint = state.sprints[indexOfCurrentSprint]
+        const currentSprint = sprints[indexOfCurrentSprint]
         if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
           indexOfCurrentSprint += 1
-          if (indexOfCurrentSprint === state.sprints.length) {
+          if (indexOfCurrentSprint === sprints.length) {
             commit('endTimer')
-            if (state.settings.timer.autoRestart) {
+            if (settings.timer.autoRestart) {
               commit('clearTimers')
               commit('startTimer', 0)
             }
@@ -87,9 +90,9 @@ export const actions = {
         }
         commit('increaseSprintByInterval', {
           indexOfCurrentSprint,
-          interval: state.settings.timer.interval,
+          interval: settings.timer.interval,
         })
-      }, state.settings.timer.interval)
+      }, settings.timer.interval)
     )
   },
   endTimer({ commit }: any, payload: any) {
