@@ -53,7 +53,7 @@ export const mutations = {
   toggleIsRunning({ currentSession }: any) {
     currentSession.isRunning = !currentSession.isRunning
   },
-  setPropertyAsCurrentTime(property: number) {
+  setPropertyAsCurrentTime(state: any, property: number) {
     property = new Date().getTime()
   },
   clearTimers(state: any) {
