@@ -79,7 +79,7 @@ export const actions = {
       dispatch('startTimer', indexOfCurrentSprint)
     }
   },
-  async startTimer(
+  startTimer(
     { state: { sprints, settings }, commit, dispatch }: any,
     indexOfCurrentSprint: number
   ) {
