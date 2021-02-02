@@ -83,7 +83,7 @@ export const actions = {
       dispatch('startTimer', indexOfCurrentSprint)
     }
   },
-  startTimer(
+  async startTimer(
     { state: { sprints, settings }, commit, dispatch }: any,
     indexOfCurrentSprint: number
   ) {
@@ -91,10 +91,12 @@ export const actions = {
     commit('logCurrentSession')
     commit(
       'startTimer',
-      setInterval(() => {
+      setInterval(async () => {
         const currentSprint = sprints[indexOfCurrentSprint]
         if (currentSprint.progress >= currentSprint.duration * 60 * 1000) {
           indexOfCurrentSprint += 1
+          const requestPermission = await Notification.requestPermission()
+          console.log(requestPermission)
           commit('notify', currentSprint)
           if (indexOfCurrentSprint === sprints.length) {
             commit('endTimer')
