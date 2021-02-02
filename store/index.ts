@@ -54,13 +54,9 @@ export const mutations = {
 
   notify(state: any, { name }: { name: string }) {
     // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification#Parameters
-    this._vm.$notification.show(
-      `${name} has finished!`,
-      {
-        body: '168 Hours',
-      },
-      {}
-    )
+    const notification = new Notification(`${name} has finished!`, {
+      body: '168 Hours',
+    })
     const audio = new Audio(
       'https://www.myinstants.com/media/sounds/preview_4.mp3'
     )
