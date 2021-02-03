@@ -13,6 +13,7 @@
         >
           Add Sprint
         </v-btn>
+        <v-btn color="secondary" @click="clearTimers">Clear Timers</v-btn>
       </v-card-actions>
       <v-divider></v-divider>
       <v-card-text>
